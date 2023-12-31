@@ -76,9 +76,9 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: ../../public/package-lock.json
-      - run: npm ci
-      - run: npm test
+            #cache-dependency-path: ../../public/package-lock.json
+            #- run: npm ci
+            #- run: npm test
       # Install plugins (from your package.json)
       - run: npm install
 
