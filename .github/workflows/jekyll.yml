@@ -77,10 +77,10 @@ jobs:
           node-version: 18
           cache: 'npm'
           cache-dependency-path: /home/runner/work/jekyll_webpage/jekyll_webpage/public/package-lock.json
-      - run: npm ci
+      - run: npm install
+            # - run: npm ci
       - run: npm test
       # Install plugins (from your package.json)
-      - run: npm install
 
   # Deployment job
   deploy:
