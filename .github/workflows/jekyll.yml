@@ -76,7 +76,7 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: ${{ github.workspace }}/public/package.json
+          cache-dependency-path: ${{ github.workspace }}/public/package-lock.json
       - run: npm ci
       - run: npm test
       # Install plugins (from your package.json)
