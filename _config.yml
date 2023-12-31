@@ -1,3 +1,9 @@
+source: public
+timezone: Africa/Nairobi
+verbose: false
+  #layouts_dir: templates/
+title: "Jekyll Actions Demo"
+url: "https://igwanya.github.io"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
