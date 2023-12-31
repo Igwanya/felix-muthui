@@ -76,7 +76,7 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: /home/runner/work/jekyll_webpage/jekyll_webpage/public/package-lock.json
+          cache-dependency-path: /home/runner/work/jekyll_webpage/jekyll_webpage/public/package.json
       - run: npm install
             # - run: npm ci
       - run: npm test
