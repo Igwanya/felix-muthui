@@ -13,7 +13,7 @@ plugins:
 
 postcss:
   cache: false
-  script: node_modules/.bin/postcss
+    #script: node_modules/.bin/postcss
   config: postcss.config.js
 # files Jekyll should not delete from .site
 keep_files:
