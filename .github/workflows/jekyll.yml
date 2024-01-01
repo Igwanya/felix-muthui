@@ -67,6 +67,8 @@ jobs:
         working-directory: ./public
         run: |
           npm ci
+          npm install -D tailwindcss postcss autoprefixer
+          npx tailwindcss init
   # Build job
   build:
     runs-on: ubuntu-latest
