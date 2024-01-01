@@ -49,7 +49,7 @@ jobs:
           echo "{path}" >> $GITHUB_PATH
           echo $GITHUB_PATH
           echo "package.json: "
-          echo ls ${{ github.workspace }}/public
+          ls  ${{ github.workspace }}/public
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Install-node-js:
     runs-on: ubuntu-latest
