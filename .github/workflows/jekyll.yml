@@ -59,8 +59,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-            # cache: 'npm'
-            # cache-dependency-path: ${{ github.action_path }}/public/package-lock.json
+            cache: 'npm'
+            cache-dependency-path: ${{ github.action_path }}/public/package.json
             #- run: npm ci
       # Install plugins (from your package.json)
       - run: npm install
