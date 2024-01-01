@@ -53,18 +53,19 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Install-node-js:
     runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          node-version: ['14.x', '16.x', '18.x']
     steps:
         # Install Node as this is needed for PostCSS
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-            cache: 'npm'
-            cache-dependency-path: ${{ github.action_path }}/public/package.json
-            #- run: npm ci
-      # Install plugins (from your package.json)
-      - run: npm install
-      - run: npm test
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        working-directory: ./public
+        run: npm ci
   # Build job
   build:
     runs-on: ubuntu-latest
