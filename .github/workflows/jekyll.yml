@@ -73,6 +73,7 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    needs: Install-node-js
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -86,7 +87,6 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
-        needs: Install-node-js
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
