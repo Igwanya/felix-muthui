@@ -46,6 +46,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          echo "{path}" >> $GITHUB_PATH
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Install-node-js:
     runs-on: ubuntu-latest
