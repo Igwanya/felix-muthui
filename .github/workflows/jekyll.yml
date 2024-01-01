@@ -47,6 +47,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           echo "{path}" >> $GITHUB_PATH
+          echo $GITHUB_PATH
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Install-node-js:
     runs-on: ubuntu-latest
