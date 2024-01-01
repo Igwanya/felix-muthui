@@ -3,8 +3,19 @@ timezone: Africa/Nairobi
 verbose: false
   #layouts_dir: templates/
 title: "Jekyll Actions Demo"
-url: "https://igwanya.github.io"
+url: "https://igwanya.github.io/jekyll_webpage/"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+    # - jekyll-postcss
+  - jekyll-postcss-v2
+
+postcss:
+  cache: false
+  script: node_modules/.bin/postcss
+  config: postcss.config.js
+# files Jekyll should not delete from .site
+keep_files:
+  - css/tailwind.css
+  - css/tailwind.css.map
