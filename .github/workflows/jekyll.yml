@@ -46,9 +46,21 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          echo "github action path"
-          echo ${{ github.action_path }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Install-node-js:
+    runs-on: ubuntu-latest
+    steps:
+        # Install Node as this is needed for PostCSS
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: ${{ github.action_path }}/public/package-lock.json
+      - run: npm ci
+      - run: npm test
+      # Install plugins (from your package.json)
+      - run: npm install
   # Build job
   build:
     runs-on: ubuntu-latest
@@ -72,17 +84,7 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
-        # Install Node as this is needed for PostCSS
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: ${{ github.workspace }}/public/package-lock.json
-      - run: npm ci
-      - run: npm test
-      # Install plugins (from your package.json)
-      - run: npm install
+
 
   # Deployment job
   deploy:
