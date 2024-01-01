@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-          node-version: ['14.x', '16.x', '18.x']
+          node-version: ['18.x', '20.x']
     steps:
         # Install Node as this is needed for PostCSS
       - uses: actions/checkout@v4
@@ -65,7 +65,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         working-directory: ./public
-        run: npm ci
+        run: |
+          npm ci
   # Build job
   build:
     runs-on: ubuntu-latest
