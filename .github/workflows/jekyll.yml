@@ -69,6 +69,7 @@ jobs:
           npm ci
           npm install -D tailwindcss postcss autoprefixer
           npx tailwindcss init
+          npm run dev
   # Build job
   build:
     runs-on: ubuntu-latest
@@ -85,6 +86,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
+        needs: Install-node-js
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
