@@ -52,6 +52,7 @@ jobs:
           npm install -D tailwindcss postcss autoprefixer
           npx tailwindcss init
           npm i postcss postcss-cli
+          npm install redis
 
   # Build job
   build:

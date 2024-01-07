@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "postcss-loader": "^7.3.4",
-    "postcss-scss": "^4.0.9"
+    "postcss-scss": "^4.0.9",
+    "redis": "^4.6.12"
   }
 }
