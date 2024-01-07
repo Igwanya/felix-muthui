@@ -3,11 +3,17 @@ timezone: Africa/Nairobi
 verbose: false
   #layouts_dir: templates/
 title: "Jekyll Actions Demo"
-url: "https://igwanya.github.io/jekyll_webpage/"
+url: "https://igwanya.github.io/felix-muthui/"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
 
 # files Jekyll should not delete from .site
 keep_files:
