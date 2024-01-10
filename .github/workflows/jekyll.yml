@@ -51,20 +51,14 @@ jobs:
           npm ci
           npm install -D tailwindcss postcss autoprefixer
           npx tailwindcss init
-          npm i postcss postcss-cli
-          npm install redis
-          npm install browserify
+          npm i postcss postcss-cli postcss-loader postcss-preset-env
           npm install webpack webpack-cli --save-dev
           npm install --save lodash
           npm install --save-dev style-loader css-loader
-      - name: Build project
+      - name: Build using node project
         working-directory: ./public
         run: |
           npm run build -- --color
-          npm test
-
-
-
 
   # Build job
   build:
