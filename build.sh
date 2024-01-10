@@ -12,5 +12,6 @@
 
 cowsay -p "Executing the build process"
 jekyll doctor
-npx tailwindcss -i /home/felixmuthui32/projects/felix-muthui/public/assets/tailwindcss/input.css -o /home/felixmuthui32/projects/felix-muthui/public/assets/css/main.css
+# npx tailwindcss -i /home/felixmuthui32/projects/felix-muthui/public/assets/tailwindcss/input.css -o /home/felixmuthui32/projects/felix-muthui/public/assets/css/output.css
+
 bundle exec jekyll serve --livereload
