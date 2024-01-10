@@ -1,14 +1,12 @@
+const path = require('path');
+
 module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'postcss-loader'],
-      },
-      {
-        test: /\.jsx?$/,
-        use: ['babel-loader', 'astroturf/loader'],
-      }
-    ]
-  }
+    mode: 'development',
+    entry: {
+        main: './assets/build/main.js',
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'assets/js'),
+    },
 }
