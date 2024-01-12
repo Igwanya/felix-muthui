@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "concurrently --prefix \"{time}-{pid} [{name}]\" -c \"auto\" -n \"webpack,tailwindcss\" -k \"webpack --config webpack.config.js\" \"npx tailwindcss -i ./assets/src/main.css -o ./assets/dist/output.css\" "
   },
   "keywords": [],
   "author": "Felix Muthui Igwanya",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "browserify": "^17.0.0",
+    "concurrently": "^8.2.2",
     "crypto": "^1.0.1",
     "lodash": "^4.17.21",
     "net": "^1.0.2",
