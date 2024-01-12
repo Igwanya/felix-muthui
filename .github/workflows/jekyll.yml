@@ -49,12 +49,13 @@ jobs:
         working-directory: ./public
         run: |
           npm ci
-          npm install -D tailwindcss postcss autoprefixer
-          npx tailwindcss init
-          npm i postcss postcss-cli postcss-loader postcss-preset-env
-          npm install webpack webpack-cli --save-dev
+          npm install
           npm install --save lodash
-          npm install --save-dev style-loader css-loader
+          npm install webpack webpack-cli --save
+          npm i postcss postcss-cli postcss-loader postcss-preset-env
+          npm install --save style-loader css-loader
+          npm install -D tailwindcss postcss autoprefixer
+          npm run build
       - name: Build using node project
         working-directory: ./public
         run: |
