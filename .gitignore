@@ -7,3 +7,4 @@ _site/
 node_modules
 .DS_Store
 config.codekit3
+./public/assets/vendor
