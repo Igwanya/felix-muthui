@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "concurrently --prefix \"{time}-{pid} [{name}]\" -c \"auto\" -n \"webpack,tailwindcss\" -k \"webpack --config webpack.config.js\" \"npx tailwindcss -i ./assets/src/main.css -o ./assets/dist/output.css\" "
+    "build": "concurrently --prefix \"{time}-{pid} [{name}]\" -c \"auto\" -n \"webpack,tailwindcss\" \"webpack --config webpack.config.js\" \"npx tailwindcss -c ./tailwind.config.js -i ./assets/src/main.css -o ./assets/dist/output.css\" ",
+    "web": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "Felix Muthui Igwanya",
