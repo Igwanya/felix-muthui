@@ -16,7 +16,7 @@ echo "[*] swicthing to public directory"
 cd public
 npm run build
 cd ..
-echo " " && fortune -i echo " "
+echo " " && fortune echo " "
 # npx tailwindcss -i /home/felixmuthui32/projects/felix-muthui/public/assets/tailwindcss/input.css -o /home/felixmuthui32/projects/felix-muthui/public/assets/css/output.css
 
 bundle exec jekyll serve --livereload

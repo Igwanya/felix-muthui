@@ -7,14 +7,16 @@ title: Home
 
 ---
 <section>
-
-<div class="chat-notification">
-  <div class="chat-notification-logo-wrapper">
-    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
-  </div>
-  <div class="chat-notification-content">
-    <h4 class="chat-notification-title">ChitChat</h4>
-    <p class="chat-notification-message">You have a new message!</p>
-  </div>
-</div>
+ <div class="inner">
+        <a href="{{ '/' | absolute_url }}">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        {% if site.github.is_project_page %}
+          <a href="{{ site.github.repository_url }}" class="button"><small>View project on</small> GitHub</a>
+        {% endif %}
+        {% if site.github.is_user_page %}
+          <a href="{{ site.github.owner_url }}" class="button"><small>Follow me on</small> GitHub</a>
+        {% endif %}
+      </div>
 </section>
